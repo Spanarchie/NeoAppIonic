@@ -4,6 +4,72 @@ from hashlib import md5
 from app import db
 
 
+class Player():
+
+    # id =
+    # icon =
+    # nickname =
+    # email =
+    # about_me =
+    # last_seen =
+
+    # Actions -
+    #
+    # register()
+    #
+    # login()
+    #
+    # getStock()
+    #
+    # getBalance()
+    #
+    #
+    # #
+    pass
+
+
+class Business():
+
+
+    # Actions -
+    #
+    # setAvailability()   // for selling
+    #
+    # transferOwnership()
+    #
+    # addMoneyTo()
+    #
+    # getMoneyFrom()
+    #
+    # getBalance()
+    #
+    #
+    # #
+    pass
+
+
+class StockHolding():
+    pass
+
+
+class Cars():
+    pass
+
+
+class Parts():
+    pass
+
+
+
+
+
+
+
+
+
+
+
+
 followers = db.Table(
     'followers',
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
@@ -11,7 +77,7 @@ followers = db.Table(
 )
 
 
-class User(db.Model):
+class User():
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
@@ -78,6 +144,7 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % (self.nickname)
+
 
 
 class Post(db.Model):
